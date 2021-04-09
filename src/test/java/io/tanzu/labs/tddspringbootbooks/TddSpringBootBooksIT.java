@@ -9,5 +9,4 @@ class TddSpringBootBooksIT {
 	@Test
 	void contextLoads() {
 	}
-
 }
