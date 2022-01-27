@@ -1,8 +1,4 @@
 node {
-    // tools {
-    //     maven 'local' 
-    //     jdk 'jdk8' 
-    // }
     stage('env') {
         sh 'echo $PATH'
         sh 'echo $JAVA_HOME'
@@ -14,7 +10,10 @@ node {
         git 'https://github.com/jskim1991/tdd-spring-boot-books-maven.git'
     }
     stage('build') {
-        sh 'mvn clean package'
+        sh 'mvn clean package -DskipTests'
+    }
+    stage('unit test') {
+        sh 'make tests'
     }
     stage('print') {
         print('done')
