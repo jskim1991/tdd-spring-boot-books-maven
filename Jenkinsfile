@@ -1,8 +1,12 @@
-pipeline {
-    agent any
-    tools {
-        maven 'local' 
-        jdk 'jdk8' 
+node {
+    // tools {
+    //     maven 'local' 
+    //     jdk 'jdk8' 
+    // }
+    stage('env') {
+        sh 'echo $PATH'
+        sh 'echo $JAVA_HOME'
+        sh 'echo $MAVEN_HOME'
     }
     stage('clone') {
         git 'https://github.com/jskim1991/tdd-spring-boot-books-maven.git'
@@ -13,4 +17,8 @@ pipeline {
     stage('print') {
         print('done')
     }
+}
+
+void print(message) {
+    echo "${message}"
 }
