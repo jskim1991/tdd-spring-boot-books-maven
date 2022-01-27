@@ -13,7 +13,7 @@ node {
         sh 'mvn clean package -DskipTests'
     }
     stage('unit test') {
-        sh 'make tests'
+        sh 'mvn test'
     }
     stage('print') {
         print('done')
