@@ -1,5 +1,6 @@
 node {
     stage('env') {
+        sh 'source ~/.zshrc'
         sh 'echo $PATH'
         sh 'echo $JAVA_HOME'
         sh 'echo $MAVEN_HOME'
